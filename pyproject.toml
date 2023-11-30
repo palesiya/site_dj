@@ -1,0 +1,10 @@
+[tool.black]
+line-lenght = 120
+target-version = ['py310', 'py311']
+skip_magic_trailing_comma = false
+
+[tool.flake8]
+exclude = ['tests', 'vevn', '.vevn', 'deploy', 'tmp_*.py']
+ignore = ['W503', 'E203', 'C901']
+max-complexity = 10
+max-line-lenght = 120
