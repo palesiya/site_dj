@@ -3,3 +3,7 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'home.html')
+
+
+def blog_news(request):
+    return render(request, 'blog.html')

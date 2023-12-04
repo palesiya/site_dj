@@ -1,0 +1,35 @@
+<section class="contact-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-heading">
+                    <h2>Message</h2>
+                </div>
+                <form id="contact" action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        {% for input in form %}
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <label for="{{ input.name }}">{{ input.label }}</label>
+                                    {{ input }}
+                                </fieldset>
+                            </div>
+                        {% endfor %}
+                        <div class="col-md-6">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="btn">Send Message</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="section-heading contact-info">
+                    <h2>Contact Info</h2>
+                    <p>Pellentesque nec orci in erat venenatis viverra. Vivamus in lorem et leo feugiat ullamcorper. Donec volutpat fermentum erat non aliquet. Cras fermentum, risus a blandit sodales, erat turpis eleifend lacus, venenatis mollis leo lorem vel eros. Quisque et sem tempus, feugiat urna iaculis, tempor metus.<br><br><em>30 Raffles Ave, <br>Singapore 039803</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
