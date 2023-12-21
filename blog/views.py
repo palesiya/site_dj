@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from blog.models import Post
 
 
-def blog(request):
-    return render(request, 'blog.html')
+class BlogView(ListView):
+    paginate_by = 3
+    model = Post
+    template_name = 'blog.html'

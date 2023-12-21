@@ -11,5 +11,3 @@ def contact(request):
             cform.save()
             return HttpResponseRedirect(request.headers.get("Referer" or "/"))
     return render(request, 'contact.html', {"form": cform})
-
-

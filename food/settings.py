@@ -118,6 +118,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+MEDIA_ROOT = BASE_DIR / 'food' / 'media'
+MEDIA_URL = "media/"
 
 STATIC_URL = 'static/'
 if DEBUG:
@@ -128,3 +130,5 @@ else:
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MAX_PAGE_SIZE = 3

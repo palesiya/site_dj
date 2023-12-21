@@ -8,36 +8,20 @@
                         <div class="col-md-7">
                             <h2>Lunch Menu</h2>
                             <div id="owl-lunch" class="owl-carousel owl-theme">
-                                <div class="item col-md-12">
-                                    <div class="food-item">
-                                        <img src="{% static "img/lunch_item.jpg" %}" alt="">
-                                        <div class="price">$6.50</div>
-                                        <div class="text-content">
-                                            <h4>Mumble Ditch Corn</h4>
-                                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean ditcher meal...</p>
+                                {% for obj in lunch %}
+                                    <div class="item col-md-12">
+                                        <div class="food-item">
+                                            {% for foto in obj.images.all %}
+                                            <img src="{{ foto.img.url }}" alt="lunch">
+                                            {% endfor %}
+                                            <div class="price">${{obj.price}}</div>
+                                            <div class="text-content">
+                                                <h4>{{ obj.title }}</h4>
+                                                <p>{{ obj.text }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item col-md-12">
-                                    <div class="food-item">
-                                        <img src="{% static "img/breakfast_item.jpg" %}" alt="">
-                                        <div class="price">$11.75</div>
-                                        <div class="text-content">
-                                            <h4>Wayfare Lomo Core</h4>
-                                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean ditcher meal...</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item col-md-12">
-                                    <div class="food-item">
-                                        <img src="{% static "img/dinner_item.jpg" %}" alt="">
-                                        <div class="price">$16.50</div>
-                                        <div class="text-content">
-                                            <h4>Taiyaki Gastro Tousled</h4>
-                                            <p>Dreamcatcher squid ennui cliche chicharros nes echo  small batch jean ditcher meal...</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="col-md-5">

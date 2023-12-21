@@ -1,6 +1,7 @@
 from django import forms
 from contact.models import Messages
 
+
 class ContactForm(forms.Form):
     name = forms.CharField(
         label="Name",

@@ -1,0 +1,27 @@
+ {% load static %}
+<section class="sign-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading">
+                    <h2>Signup for our newsletters</h2>
+                </div>
+            </div>
+        </div>
+        <form id="contact" action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4 col-md-offset-3">
+                    <fieldset>
+                        {{ sign_up }}
+                    </fieldset>
+                </div>
+                <div class="col-md-2">
+                    <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
